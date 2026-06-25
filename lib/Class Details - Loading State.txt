@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Class Details - Loading</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&amp;family=Work+Sans:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#3c4a42",
+                        "surface-container-low": "#eff4ff",
+                        "surface-variant": "#d3e4fe",
+                        "surface-bright": "#f8f9ff",
+                        "surface-tint": "#006c49",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#4edea3",
+                        "background": "#f8f9ff",
+                        "on-secondary-container": "#576378",
+                        "on-primary-fixed-variant": "#005236",
+                        "on-tertiary-fixed": "#001a42",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#6ffbbe",
+                        "secondary": "#535f74",
+                        "tertiary-container": "#71a1ff",
+                        "surface-container-highest": "#d3e4fe",
+                        "tertiary-fixed": "#d8e2ff",
+                        "surface-dim": "#cbdbf5",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#e5eeff",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#3c475b",
+                        "secondary-fixed": "#d7e3fc",
+                        "outline": "#6c7a71",
+                        "outline-variant": "#bbcabf",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#f8f9ff",
+                        "tertiary": "#005ac2",
+                        "primary": "#006c49",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#4edea3",
+                        "inverse-surface": "#213145",
+                        "on-primary-fixed": "#002113",
+                        "secondary-container": "#d4e0f9",
+                        "secondary-fixed-dim": "#bbc7df",
+                        "surface-container-high": "#dce9ff",
+                        "on-background": "#0b1c30",
+                        "on-primary-container": "#00422b",
+                        "on-surface": "#0b1c30",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#00367a",
+                        "tertiary-fixed-dim": "#adc6ff",
+                        "on-tertiary-fixed-variant": "#004395",
+                        "primary-container": "#10b981",
+                        "on-secondary-fixed": "#101c2e",
+                        "inverse-on-surface": "#eaf1ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "xl": "32px",
+                        "gutter": "12px",
+                        "margin-desktop": "40px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "label-caps": ["Work Sans"],
+                        "body-sm": ["Hanken Grotesk"],
+                        "subtitle-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-md": ["18px", {"lineHeight": "24px", "fontWeight": "700"}],
+                        "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-caps": ["11px", {"lineHeight": "12px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "subtitle-md": ["16px", {"lineHeight": "20px", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        .skeleton-shimmer {
+            background: linear-gradient(90deg, #eff4ff 25%, #d3e4fe 50%, #eff4ff 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite linear;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body-md text-on-surface antialiased">
+<!-- Top App Bar -->
+<header class="fixed top-0 left-0 w-full z-40 bg-surface px-margin-mobile py-sm flex justify-between items-center h-16 shadow-none">
+<div class="flex items-center gap-md">
+<button class="p-2 hover:bg-surface-variant/50 rounded-full transition-colors">
+<span class="material-symbols-outlined text-on-surface">arrow_back</span>
+</button>
+<div class="flex flex-col">
+<h1 class="font-headline-md text-headline-md text-on-surface">London Ordinary Level</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Schedule: Mon, Wed, Fri • 10:00 AM</p>
+</div>
+</div>
+<div class="flex items-center gap-sm">
+<button class="p-2 hover:bg-surface-variant/50 rounded-full transition-colors">
+<span class="material-symbols-outlined text-on-surface">refresh</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional circular profile photo of a modern teacher wearing academic spectacles and a supportive smile, bright studio lighting, educational corporate aesthetic, high contrast navy and white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsFPjzvYrTU11nLKUlLYxWQ8uTYKh2XX9YMD2kpljwLn5LJ0cStSlZB47DMAPa06LlSph6-G4iP9JXaiXWwsq_KSHwjHZ8PeB9Eh7D1mQvsUf6SWYMznubh0xjgzcdFbC_66kzyp7tMbGE7tFWo0EVSd2lcYuOHmmqcgPK7U96r_JACRL5kR5dfh2aBIsaVr0BOBXaS7Sw9B7kzR0Da3A-znKTNAcCMJxFvcKZOvZk_XXThB_7cuCXO5mzABvMqSUZqeoAbdTjPdc"/>
+</div>
+</div>
+</header>
+<main class="pt-20 pb-24 px-margin-mobile max-w-[1280px] mx-auto">
+<!-- Filter Chips Section (Loaded State) -->
+<div class="flex gap-sm mb-lg overflow-x-auto pb-2 no-scrollbar">
+<button class="bg-primary text-on-primary font-label-caps text-label-caps px-lg py-2 rounded-full whitespace-nowrap shadow-sm">
+                All Students
+            </button>
+<button class="border border-outline-variant text-on-surface-variant font-label-caps text-label-caps px-lg py-2 rounded-full whitespace-nowrap bg-surface-container-lowest hover:bg-surface-variant/30 transition-colors">
+                Present
+            </button>
+<button class="border border-outline-variant text-on-surface-variant font-label-caps text-label-caps px-lg py-2 rounded-full whitespace-nowrap bg-surface-container-lowest hover:bg-surface-variant/30 transition-colors">
+                Absent
+            </button>
+<button class="border border-outline-variant text-on-surface-variant font-label-caps text-label-caps px-lg py-2 rounded-full whitespace-nowrap bg-surface-container-lowest hover:bg-surface-variant/30 transition-colors">
+                Late
+            </button>
+</div>
+<!-- Student List Skeleton Grid -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden shadow-sm">
+<div class="px-md py-sm border-b border-outline-variant flex justify-between items-center bg-surface-container-low/50">
+<div class="w-32 h-4 skeleton-shimmer rounded"></div>
+<div class="w-12 h-4 skeleton-shimmer rounded"></div>
+</div>
+<!-- Repeated Skeleton Rows -->
+<div class="divide-y divide-outline-variant">
+<!-- Skeleton Row 1 -->
+<div class="flex items-center justify-between p-md hover:bg-surface-variant/10 transition-colors">
+<div class="flex items-center gap-md w-full max-w-sm">
+<div class="w-12 h-12 rounded-full skeleton-shimmer flex-shrink-0"></div>
+<div class="flex flex-col gap-xs w-full">
+<div class="w-3/4 h-5 skeleton-shimmer rounded"></div>
+<div class="w-1/2 h-4 skeleton-shimmer rounded"></div>
+</div>
+</div>
+<div class="flex flex-col items-end gap-xs">
+<div class="w-16 h-6 skeleton-shimmer rounded-full"></div>
+<div class="w-10 h-3 skeleton-shimmer rounded"></div>
+</div>
+</div>
+<!-- Skeleton Row 2 -->
+<div class="flex items-center justify-between p-md hover:bg-surface-variant/10 transition-colors">
+<div class="flex items-center gap-md w-full max-w-sm">
+<div class="w-12 h-12 rounded-full skeleton-shimmer flex-shrink-0"></div>
+<div class="flex flex-col gap-xs w-full">
+<div class="w-2/3 h-5 skeleton-shimmer rounded"></div>
+<div class="w-1/3 h-4 skeleton-shimmer rounded"></div>
+</div>
+</div>
+<div class="flex flex-col items-end gap-xs">
+<div class="w-16 h-6 skeleton-shimmer rounded-full"></div>
+<div class="w-10 h-3 skeleton-shimmer rounded"></div>
+</div>
+</div>
+<!-- Skeleton Row 3 -->
+<div class="flex items-center justify-between p-md hover:bg-surface-variant/10 transition-colors">
+<div class="flex items-center gap-md w-full max-w-sm">
+<div class="w-12 h-12 rounded-full skeleton-shimmer flex-shrink-0"></div>
+<div class="flex flex-col gap-xs w-full">
+<div class="w-4/5 h-5 skeleton-shimmer rounded"></div>
+<div class="w-1/4 h-4 skeleton-shimmer rounded"></div>
+</div>
+</div>
+<div class="flex flex-col items-end gap-xs">
+<div class="w-16 h-6 skeleton-shimmer rounded-full"></div>
+<div class="w-10 h-3 skeleton-shimmer rounded"></div>
+</div>
+</div>
+<!-- Skeleton Row 4 -->
+<div class="flex items-center justify-between p-md hover:bg-surface-variant/10 transition-colors">
+<div class="flex items-center gap-md w-full max-w-sm">
+<div class="w-12 h-12 rounded-full skeleton-shimmer flex-shrink-0"></div>
+<div class="flex flex-col gap-xs w-full">
+<div class="w-1/2 h-5 skeleton-shimmer rounded"></div>
+<div class="w-1/2 h-4 skeleton-shimmer rounded"></div>
+</div>
+</div>
+<div class="flex flex-col items-end gap-xs">
+<div class="w-16 h-6 skeleton-shimmer rounded-full"></div>
+<div class="w-10 h-3 skeleton-shimmer rounded"></div>
+</div>
+</div>
+<!-- Skeleton Row 5 -->
+<div class="flex items-center justify-between p-md hover:bg-surface-variant/10 transition-colors">
+<div class="flex items-center gap-md w-full max-w-sm">
+<div class="w-12 h-12 rounded-full skeleton-shimmer flex-shrink-0"></div>
+<div class="flex flex-col gap-xs w-full">
+<div class="w-3/5 h-5 skeleton-shimmer rounded"></div>
+<div class="w-1/3 h-4 skeleton-shimmer rounded"></div>
+</div>
+</div>
+<div class="flex flex-col items-end gap-xs">
+<div class="w-16 h-6 skeleton-shimmer rounded-full"></div>
+<div class="w-10 h-3 skeleton-shimmer rounded"></div>
+</div>
+</div>
+<!-- Skeleton Row 6 -->
+<div class="flex items-center justify-between p-md hover:bg-surface-variant/10 transition-colors">
+<div class="flex items-center gap-md w-full max-w-sm">
+<div class="w-12 h-12 rounded-full skeleton-shimmer flex-shrink-0"></div>
+<div class="flex flex-col gap-xs w-full">
+<div class="w-2/3 h-5 skeleton-shimmer rounded"></div>
+<div class="w-1/2 h-4 skeleton-shimmer rounded"></div>
+</div>
+</div>
+<div class="flex flex-col items-end gap-xs">
+<div class="w-16 h-6 skeleton-shimmer rounded-full"></div>
+<div class="w-10 h-3 skeleton-shimmer rounded"></div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Navigation Drawer (Implicitly Desktop View / Logic) -->
+<aside class="hidden md:flex fixed left-0 top-0 h-full w-80 bg-surface border-r border-outline-variant flex-col py-md z-50" id="navDrawer">
+<div class="px-lg mb-xl">
+<h2 class="font-headline-lg text-primary text-headline-lg">EduTrack</h2>
+</div>
+<nav class="flex-1 px-sm space-y-2">
+<a class="flex items-center gap-md p-md bg-secondary-container text-on-secondary-container font-bold rounded-lg mx-2" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 transition-colors" href="#">
+<span class="material-symbols-outlined">school</span>
+<span class="font-body-md text-body-md">My Classes</span>
+</a>
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 transition-colors" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-body-md text-body-md">Student Records</span>
+</a>
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 transition-colors" href="#">
+<span class="material-symbols-outlined">assignment_turned_in</span>
+<span class="font-body-md text-body-md">Exams</span>
+</a>
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</a>
+</nav>
+<div class="px-lg pt-md mt-auto border-t border-outline-variant flex items-center gap-md">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close-up portrait of a professional academic instructor with kind eyes, minimal modern glasses, wearing a sharp navy blazer over a clean white shirt, soft natural office lighting, minimalist high-end education branding style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUVwPq0oze3EHqtwA_nNkNyHb9hXircDZ0fipzjl5T3j3mHc3dxWIuJ7Ahsdd7VVPjM2xirXxUFV6-5cSq5NVvDeH8EPsv8LN8BY3nrctH7smfKIOylnE2_kP5l__4h-BMDQAYrLPoekMrcrczyzdkSv90-w21qw1hX0rvJzrPWRB7En9IsB5n9lPsyLpRZu_P73vneQrnXoYy8zsYueiw0U1Rgag9eG2F5cPA49GMSpJ95kRAkiyTsftqPmy-5kkIj82DTzJrGjI"/>
+</div>
+<div>
+<p class="font-subtitle-md text-subtitle-md text-on-surface">Instructor Name</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">ID: 42381</p>
+</div>
+</div>
+</aside>
+<!-- Bottom Navigation Bar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-end pb-sm px-lg bg-surface-container-lowest rounded-t-xl shadow-lg h-20 border-t border-outline-variant">
+<button class="flex flex-col items-center justify-center text-on-secondary-container p-2 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-label-caps text-label-caps uppercase mt-1">Grid</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full p-4 -mt-8 shadow-md transition-transform active:scale-95 duration-150">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-secondary-container p-2 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-label-caps text-label-caps uppercase mt-1">Calendar</span>
+</button>
+</nav>
+<script>
+        // Micro-interaction for filter chips
+        const chips = document.querySelectorAll('.font-label-caps');
+        chips.forEach(chip => {
+            chip.addEventListener('click', () => {
+                chips.forEach(c => {
+                    c.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+                    c.classList.add('border', 'border-outline-variant', 'text-on-surface-variant', 'bg-surface-container-lowest');
+                });
+                chip.classList.remove('border', 'border-outline-variant', 'text-on-surface-variant', 'bg-surface-container-lowest');
+                chip.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+            });
+        });
+
+        // Simple intersection observer to show skeleton state "loading" logic
+        // (Visual effect only for this demo)
+        window.addEventListener('load', () => {
+            console.log('Class Details Loading State Active');
+        });
+    </script>
+</body></html>
