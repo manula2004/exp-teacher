@@ -25,19 +25,19 @@ class AppColors {
   static const Color onSurfaceVariant = Color(0xFF3C4A42);
   static const Color onSecondaryContainer = Color(0xFF576378);
 
-  // Primary (dark green) — used for back-button, links, "View All" text
-  static const Color primary = Color(0xFF006C49);
+  // Primary (deep blue) — used for back-button, links, "View All" text
+  static const Color primary = Color(0xFF2563EB);
   static const Color onPrimary = Color(0xFFFFFFFF);
 
-  // Primary Container (emerald) — FAB, active chip, strong-performance text
-  static const Color primaryContainer = Color(0xFF10B981);
-  static const Color onPrimaryContainer = Color(0xFF00422B);
+  // Primary Container (cornflower blue) — FAB, active chip, strong-performance text
+  static const Color primaryContainer = Color(0xFF6B9FE4);
+  static const Color onPrimaryContainer = Color(0xFF0D2149);
 
   // Primary fixed shades
-  static const Color primaryFixed = Color(0xFF6FFBBE);
-  static const Color primaryFixedDim = Color(0xFF4EDEA3);
-  static const Color onPrimaryFixed = Color(0xFF002113);
-  static const Color onPrimaryFixedVariant = Color(0xFF005236);
+  static const Color primaryFixed = Color(0xFFBFDBFE);
+  static const Color primaryFixedDim = Color(0xFF93C5FD);
+  static const Color onPrimaryFixed = Color(0xFF0A1929);
+  static const Color onPrimaryFixedVariant = Color(0xFF1E3A8A);
 
   // Secondary
   static const Color secondary = Color(0xFF535F74);
@@ -69,15 +69,15 @@ class AppColors {
   static const Color onErrorContainer = Color(0xFF93000A);
 
   // Surface tint
-  static const Color surfaceTint = Color(0xFF006C49);
+  static const Color surfaceTint = Color(0xFF2563EB);
 
   // Inverse
   static const Color inverseSurface = Color(0xFF213145);
   static const Color inverseOnSurface = Color(0xFFEAF1FF);
-  static const Color inversePrimary = Color(0xFF4EDEA3);
+  static const Color inversePrimary = Color(0xFF93C5FD);
 
   // ── Semantic aliases used for performance colouring ──
-  /// Strong performance (≥85%) — emerald
+  /// Strong performance (≥85%) — cornflower blue
   static const Color performanceStrong = primaryContainer;
 
   /// Mid performance (70–84%) — muted neutral
