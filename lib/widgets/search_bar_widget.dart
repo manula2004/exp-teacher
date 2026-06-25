@@ -9,7 +9,7 @@ import '../theme/app_theme.dart';
 // From "My Classes - Dashboard.html":
 //   bg:            #F1F5F9 (surface-container-low variant)
 //   border:        1px solid outline-variant (#BBCABF)
-//   focus border:  primary (#006C49)
+//   focus border:  primary (#2563EB)
 //   border-radius: lg = 8px (rounded-lg in first file) /
 //                  xl = 12px (rounded-xl in empty-state file)
 //   padding:       pl-12 pr-12 py-3 ≈ left 48px, right 48px, vertical 12px

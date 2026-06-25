@@ -12,8 +12,7 @@ import '../models/class_model.dart';
 //   border:      1px solid outline-variant (#BBCABF)
 //   border-radius: xl = 12px
 //   shadow:      0 4px 12px rgba(15,27,45,0.04)
-//   left accent: 4px wide emerald strip (visible on hover → simulated via
-//                an AnimatedContainer that shows on tap in Flutter)
+//   left accent: 4px wide accent strip (cornflower blue, visible on press)
 //   "Manage Class" button: bg = surface-container, text = primary
 // ─────────────────────────────────────────────────────────────────────────────
 class ClassCard extends StatefulWidget {

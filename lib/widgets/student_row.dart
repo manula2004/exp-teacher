@@ -111,10 +111,10 @@ class StudentRow extends StatelessWidget {
 
   // ── Helpers ──────────────────────────────────────────────────────────────
 
-  /// Color-code performance text exactly as the HTML does:
-  ///   Strong (≥85%)       → emerald (#10B981)
-  ///   Mid    (70–84%)     → muted neutral (#576378)
-  ///   Needs Support (<70%) → error red (#BA1A1A)
+  /// Color-code performance text:
+  ///   Strong (≥85%)        → cornflower blue (primaryContainer)
+  ///   Mid    (70–84%)      → muted neutral   (onSecondaryContainer)
+  ///   Needs Support (<70%) → error red       (error)
   static Color _performanceColor(PerformanceBand band) {
     switch (band) {
       case PerformanceBand.strong:
@@ -137,15 +137,15 @@ class StudentRow extends StatelessWidget {
         .toUpperCase();
   }
 
-  /// Deterministic avatar background derived from name hash.
+  /// Deterministic avatar background — blues/navys from the new accent palette.
   static const List<Color> _avatarPalette = [
-    Color(0xFF006C49), // primary
-    Color(0xFF10B981), // emerald
-    Color(0xFF005AC2), // tertiary
-    Color(0xFF535F74), // secondary
-    Color(0xFF3C4A42), // on-surface-variant
-    Color(0xFF00422B), // on-primary-container
-    Color(0xFF004395), // on-tertiary-fixed-variant
+    AppColors.primary, // #2563EB deep blue
+    AppColors.primaryContainer, // #6B9FE4 cornflower blue
+    AppColors.tertiary, // #005AC2 dark blue
+    AppColors.secondary, // #535F74 slate
+    AppColors.onSurfaceVariant, // #3C4A42 dark muted
+    AppColors.onPrimaryFixedVariant, // #1E3A8A dark navy
+    AppColors.onTertiaryFixedVariant, // #004395 deep indigo
   ];
 
   static Color _avatarColor(String name) {

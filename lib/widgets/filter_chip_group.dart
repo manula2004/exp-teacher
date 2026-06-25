@@ -7,7 +7,7 @@ import '../theme/app_theme.dart';
 // FilterChipGroup — single-select chip row from "Class Details - Students.html".
 //
 // Active chip  (from HTML):
-//   bg:     primary-container = #10B981 (emerald)
+//   bg:     primary-container = #6B9FE4 (cornflower blue)
 //   text:   on-primary-container = #00422B
 //   shadow: shadow-sm
 //   border: none

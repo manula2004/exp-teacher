@@ -31,12 +31,12 @@ class AppTheme {
   ];
 
   static List<BoxShadow> get fabShadow => [
-        BoxShadow(
-          color: const Color(0xFF2563EB).withValues(alpha: 0.25),
-          blurRadius: 24,
-          offset: const Offset(0, 8),
-        ),
-      ];
+    BoxShadow(
+      color: const Color(0xFF2563EB).withValues(alpha: 0.25),
+      blurRadius: 24,
+      offset: const Offset(0, 8),
+    ),
+  ];
 
   static ThemeData get lightTheme {
     final colorScheme = ColorScheme(
