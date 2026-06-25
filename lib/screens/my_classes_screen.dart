@@ -49,18 +49,15 @@ class _MyClassesScreenState extends State<MyClassesScreen> {
     if (_searchQuery.isEmpty) return mockClasses;
     final q = _searchQuery.toLowerCase();
     return mockClasses
-        .where((c) =>
-            c.name.toLowerCase().contains(q) ||
-            c.subject.toLowerCase().contains(q))
+        .where(
+          (c) =>
+              c.name.toLowerCase().contains(q) ||
+              c.subject.toLowerCase().contains(q),
+        )
         .toList();
   }
 
   void _onSearch(String query) => setState(() => _searchQuery = query);
-
-  void _clearSearch() {
-    _searchController.clear();
-    setState(() => _searchQuery = '');
-  }
 
   void _onFabTap() {
     ScaffoldMessenger.of(context).showSnackBar(
@@ -137,12 +134,14 @@ class _MyClassesScreenState extends State<MyClassesScreen> {
                 Text(
                   'Good Morning,',
                   style: AppTextStyles.headlineLgMobile(
-                      color: AppColors.onSurface),
+                    color: AppColors.onSurface,
+                  ),
                 ),
                 Text(
                   'Mrs. Smith',
                   style: AppTextStyles.subtitleMd(
-                      color: AppColors.onSurfaceVariant),
+                    color: AppColors.onSurfaceVariant,
+                  ),
                 ),
               ],
             ),
@@ -195,10 +194,7 @@ class _MyClassesScreenState extends State<MyClassesScreen> {
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: AppColors.secondaryContainer,
-              border: Border.all(
-                color: AppColors.primaryContainer,
-                width: 2,
-              ),
+              border: Border.all(color: AppColors.primaryContainer, width: 2),
             ),
             child: const Center(
               child: Icon(
@@ -249,10 +245,7 @@ class _MyClassesScreenState extends State<MyClassesScreen> {
 
         // ── Class list or search-empty state ──
         if (!hasResults)
-          SliverFillRemaining(
-            hasScrollBody: false,
-            child: _buildSearchEmpty(),
-          )
+          SliverFillRemaining(hasScrollBody: false, child: _buildSearchEmpty())
         else
           SliverPadding(
             padding: const EdgeInsets.fromLTRB(
@@ -262,23 +255,20 @@ class _MyClassesScreenState extends State<MyClassesScreen> {
               AppTheme.spacingXl,
             ),
             sliver: SliverList(
-              delegate: SliverChildBuilderDelegate(
-                (context, index) {
-                  final cls = filtered[index];
-                  return Padding(
-                    padding: EdgeInsets.only(
-                      bottom: index < filtered.length - 1
-                          ? AppTheme.spacingMd
-                          : 0,
-                    ),
-                    child: ClassCard(
-                      classModel: cls,
-                      onTap: () => _navigateToDetails(cls),
-                    ),
-                  );
-                },
-                childCount: filtered.length,
-              ),
+              delegate: SliverChildBuilderDelegate((context, index) {
+                final cls = filtered[index];
+                return Padding(
+                  padding: EdgeInsets.only(
+                    bottom: index < filtered.length - 1
+                        ? AppTheme.spacingMd
+                        : 0,
+                  ),
+                  child: ClassCard(
+                    classModel: cls,
+                    onTap: () => _navigateToDetails(cls),
+                  ),
+                );
+              }, childCount: filtered.length),
             ),
           ),
       ],
@@ -310,13 +300,15 @@ class _MyClassesScreenState extends State<MyClassesScreen> {
                       Text(
                         'TEACHING STATUS',
                         style: AppTextStyles.labelCaps(
-                            color: AppColors.primary),
+                          color: AppColors.primary,
+                        ),
                       ),
                       const SizedBox(height: 4),
                       Text(
                         '${mockClasses.length} Classes Active Today',
                         style: AppTextStyles.headlineMd(
-                            color: AppColors.onPrimaryContainer),
+                          color: AppColors.onPrimaryContainer,
+                        ),
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                       ),
@@ -356,7 +348,8 @@ class _MyClassesScreenState extends State<MyClassesScreen> {
                 Text(
                   'Avg Attendance',
                   style: AppTextStyles.bodySm(
-                      color: AppColors.onSecondaryContainer),
+                    color: AppColors.onSecondaryContainer,
+                  ),
                 ),
                 const SizedBox(height: 4),
                 Text(
@@ -385,15 +378,13 @@ class _MyClassesScreenState extends State<MyClassesScreen> {
           onTap: () {},
           borderRadius: BorderRadius.circular(AppTheme.radiusDefault),
           child: Padding(
-            padding: const EdgeInsets.symmetric(
-                horizontal: 4, vertical: 2),
+            padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
                   'View All',
-                  style:
-                      AppTextStyles.subtitleMd(color: AppColors.primary),
+                  style: AppTextStyles.subtitleMd(color: AppColors.primary),
                 ),
                 const Icon(
                   Icons.chevron_right,
@@ -446,11 +437,7 @@ class _MyClassesScreenState extends State<MyClassesScreen> {
         clipBehavior: Clip.hardEdge,
         child: InkWell(
           onTap: _onFabTap,
-          child: const Icon(
-            Icons.add,
-            color: Colors.white,
-            size: 32,
-          ),
+          child: const Icon(Icons.add, color: Colors.white, size: 32),
         ),
       ),
     );
@@ -490,8 +477,7 @@ class _MyClassesScreenState extends State<MyClassesScreen> {
                 shape: BoxShape.circle,
                 boxShadow: [
                   BoxShadow(
-                    color:
-                        AppColors.primaryContainer.withValues(alpha: 0.30),
+                    color: AppColors.primaryContainer.withValues(alpha: 0.30),
                     blurRadius: 8,
                     offset: const Offset(0, 4),
                   ),
@@ -500,8 +486,7 @@ class _MyClassesScreenState extends State<MyClassesScreen> {
               child: const Icon(Icons.school, color: Colors.white, size: 24),
             ),
           ),
-          _NavItem(
-              icon: Icons.calendar_today_outlined, label: 'Schedule'),
+          _NavItem(icon: Icons.calendar_today_outlined, label: 'Schedule'),
         ],
       ),
     );
@@ -511,9 +496,7 @@ class _MyClassesScreenState extends State<MyClassesScreen> {
   void _navigateToDetails(ClassModel cls) {
     Navigator.push(
       context,
-      MaterialPageRoute(
-        builder: (_) => ClassDetailsScreen(classModel: cls),
-      ),
+      MaterialPageRoute(builder: (_) => ClassDetailsScreen(classModel: cls)),
     );
   }
 }
@@ -532,7 +515,9 @@ class _NavItem extends StatelessWidget {
       borderRadius: BorderRadius.circular(AppTheme.radiusLg),
       child: Padding(
         padding: const EdgeInsets.symmetric(
-            horizontal: AppTheme.spacingMd, vertical: AppTheme.spacingXs),
+          horizontal: AppTheme.spacingMd,
+          vertical: AppTheme.spacingXs,
+        ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -543,5 +528,3 @@ class _NavItem extends StatelessWidget {
     );
   }
 }
-
-

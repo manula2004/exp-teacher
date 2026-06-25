@@ -76,11 +76,7 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
             // left search icon
             prefixIcon: const Padding(
               padding: EdgeInsets.symmetric(horizontal: AppTheme.spacingMd),
-              child: Icon(
-                Icons.search,
-                color: AppColors.outline,
-                size: 22,
-              ),
+              child: Icon(Icons.search, color: AppColors.outline, size: 22),
             ),
             prefixIconConstraints: const BoxConstraints(minWidth: 48),
             // right mic icon
@@ -96,9 +92,7 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
             border: InputBorder.none,
             enabledBorder: InputBorder.none,
             focusedBorder: InputBorder.none,
-            contentPadding: const EdgeInsets.symmetric(
-              vertical: 14,
-            ),
+            contentPadding: const EdgeInsets.symmetric(vertical: 14),
             isDense: true,
           ),
         ),

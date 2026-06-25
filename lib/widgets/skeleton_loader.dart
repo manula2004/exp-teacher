@@ -45,9 +45,10 @@ class _SkeletonLoaderState extends State<SkeletonLoader>
       duration: const Duration(milliseconds: 1500),
     )..repeat();
 
-    _shimmer = Tween<double>(begin: -1, end: 2).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.linear),
-    );
+    _shimmer = Tween<double>(
+      begin: -1,
+      end: 2,
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.linear));
   }
 
   @override
@@ -61,7 +62,7 @@ class _SkeletonLoaderState extends State<SkeletonLoader>
     // Varying name-bar widths across rows — mirrors the HTML reference's
     // varying widths: 3/4, 2/3, 4/5, 1/2, 3/5, 2/3.
     const List<double> nameBarFractions = [0.75, 0.67, 0.80, 0.50, 0.60, 0.67];
-    const List<double> idBarFractions   = [0.50, 0.33, 0.25, 0.50, 0.33, 0.50];
+    const List<double> idBarFractions = [0.50, 0.33, 0.25, 0.50, 0.33, 0.50];
 
     return Column(
       children: List.generate(widget.rowCount, (i) {
@@ -98,23 +99,27 @@ class _SkeletonLoaderState extends State<SkeletonLoader>
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        LayoutBuilder(builder: (ctx, constraints) {
-                          return _ShimmerBlock(
-                            width: constraints.maxWidth * nameFrac,
-                            height: 20,
-                            borderRadius: AppTheme.radiusDefault,
-                            shimmerValue: _shimmer.value,
-                          );
-                        }),
+                        LayoutBuilder(
+                          builder: (ctx, constraints) {
+                            return _ShimmerBlock(
+                              width: constraints.maxWidth * nameFrac,
+                              height: 20,
+                              borderRadius: AppTheme.radiusDefault,
+                              shimmerValue: _shimmer.value,
+                            );
+                          },
+                        ),
                         const SizedBox(height: AppTheme.spacingXs),
-                        LayoutBuilder(builder: (ctx, constraints) {
-                          return _ShimmerBlock(
-                            width: constraints.maxWidth * idFrac,
-                            height: 16,
-                            borderRadius: AppTheme.radiusDefault,
-                            shimmerValue: _shimmer.value,
-                          );
-                        }),
+                        LayoutBuilder(
+                          builder: (ctx, constraints) {
+                            return _ShimmerBlock(
+                              width: constraints.maxWidth * idFrac,
+                              height: 16,
+                              borderRadius: AppTheme.radiusDefault,
+                              shimmerValue: _shimmer.value,
+                            );
+                          },
+                        ),
                       ],
                     ),
                   ),
@@ -172,9 +177,9 @@ class _ShimmerBlock extends StatelessWidget {
       begin: Alignment.centerLeft,
       end: Alignment.centerRight,
       colors: const [
-        AppColors.shimmerBase,      // #EFF4FF  25%
+        AppColors.shimmerBase, // #EFF4FF  25%
         AppColors.shimmerHighlight, // #D3E4FE  50%
-        AppColors.shimmerBase,      // #EFF4FF  75%
+        AppColors.shimmerBase, // #EFF4FF  75%
       ],
       stops: [
         math.max(0, shimmerValue - 0.5),

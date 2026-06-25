@@ -16,11 +16,7 @@ import '../theme/app_theme.dart';
 // Bottom border between rows; last row has none (handled by ListView separator).
 // ─────────────────────────────────────────────────────────────────────────────
 class StudentRow extends StatelessWidget {
-  const StudentRow({
-    super.key,
-    required this.student,
-    this.isLast = false,
-  });
+  const StudentRow({super.key, required this.student, this.isLast = false});
 
   final StudentModel student;
   final bool isLast;
@@ -136,7 +132,9 @@ class StudentRow extends StatelessWidget {
     if (parts.length >= 2) {
       return '${parts.first[0]}${parts.last[0]}'.toUpperCase();
     }
-    return parts.first.substring(0, parts.first.length.clamp(1, 2)).toUpperCase();
+    return parts.first
+        .substring(0, parts.first.length.clamp(1, 2))
+        .toUpperCase();
   }
 
   /// Deterministic avatar background derived from name hash.

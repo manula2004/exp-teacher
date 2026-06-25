@@ -97,7 +97,9 @@ class _EmptyStateState extends State<EmptyState>
         child: Center(
           child: Padding(
             padding: EdgeInsets.symmetric(
-              vertical: widget.compact ? AppTheme.spacingLg : AppTheme.spacingXl,
+              vertical: widget.compact
+                  ? AppTheme.spacingLg
+                  : AppTheme.spacingXl,
               horizontal: AppTheme.spacingLg,
             ),
             child: Column(
@@ -118,7 +120,11 @@ class _EmptyStateState extends State<EmptyState>
                   ),
                 ),
 
-                SizedBox(height: widget.compact ? AppTheme.spacingMd : AppTheme.spacingLg),
+                SizedBox(
+                  height: widget.compact
+                      ? AppTheme.spacingMd
+                      : AppTheme.spacingLg,
+                ),
 
                 // ── Title ──
                 Text(
@@ -156,8 +162,9 @@ class _EmptyStateState extends State<EmptyState>
                           height: 4,
                           decoration: BoxDecoration(
                             color: AppColors.outlineVariant,
-                            borderRadius:
-                                BorderRadius.circular(AppTheme.radiusLg),
+                            borderRadius: BorderRadius.circular(
+                              AppTheme.radiusLg,
+                            ),
                           ),
                         ),
                         const SizedBox(width: AppTheme.spacingMd),
@@ -166,8 +173,9 @@ class _EmptyStateState extends State<EmptyState>
                           height: 4,
                           decoration: BoxDecoration(
                             color: AppColors.outlineVariant,
-                            borderRadius:
-                                BorderRadius.circular(AppTheme.radiusLg),
+                            borderRadius: BorderRadius.circular(
+                              AppTheme.radiusLg,
+                            ),
                           ),
                         ),
                       ],

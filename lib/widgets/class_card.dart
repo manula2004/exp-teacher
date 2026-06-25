@@ -17,11 +17,7 @@ import '../models/class_model.dart';
 //   "Manage Class" button: bg = surface-container, text = primary
 // ─────────────────────────────────────────────────────────────────────────────
 class ClassCard extends StatefulWidget {
-  const ClassCard({
-    super.key,
-    required this.classModel,
-    required this.onTap,
-  });
+  const ClassCard({super.key, required this.classModel, required this.onTap});
 
   final ClassModel classModel;
   final VoidCallback onTap;
@@ -121,8 +117,7 @@ class _ClassCardState extends State<ClassCard> {
                         children: [
                           _MetaChip(
                             icon: Icons.group_outlined,
-                            label:
-                                '${widget.classModel.studentCount} Students',
+                            label: '${widget.classModel.studentCount} Students',
                           ),
                           const SizedBox(width: AppTheme.spacingLg),
                           Flexible(
@@ -140,8 +135,9 @@ class _ClassCardState extends State<ClassCard> {
                         padding: const EdgeInsets.only(top: AppTheme.spacingMd),
                         child: Divider(
                           height: 1,
-                          color:
-                              AppColors.outlineVariant.withValues(alpha: 0.3),
+                          color: AppColors.outlineVariant.withValues(
+                            alpha: 0.3,
+                          ),
                         ),
                       ),
                       const SizedBox(height: AppTheme.spacingMd),

@@ -87,6 +87,6 @@ class AppColors {
   static const Color performanceNeedsSupport = error;
 
   // ── Skeleton shimmer gradient colours ──
-  static const Color shimmerBase = surfaceContainerLow;   // #EFF4FF
-  static const Color shimmerHighlight = surfaceVariant;    // #D3E4FE
+  static const Color shimmerBase = surfaceContainerLow; // #EFF4FF
+  static const Color shimmerHighlight = surfaceVariant; // #D3E4FE
 }

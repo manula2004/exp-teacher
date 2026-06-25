@@ -23,20 +23,20 @@ class AppTheme {
 
   // Shadow definitions (from HTML .custom-shadow and .fab-shadow)
   static List<BoxShadow> get cardShadow => [
-        BoxShadow(
-          color: const Color(0xFF0F1B2D).withValues(alpha: 0.04),
-          blurRadius: 12,
-          offset: const Offset(0, 4),
-        ),
-      ];
+    BoxShadow(
+      color: const Color(0xFF0F1B2D).withValues(alpha: 0.04),
+      blurRadius: 12,
+      offset: const Offset(0, 4),
+    ),
+  ];
 
   static List<BoxShadow> get fabShadow => [
-        BoxShadow(
-          color: const Color(0xFF006C49).withValues(alpha: 0.20),
-          blurRadius: 24,
-          offset: const Offset(0, 8),
-        ),
-      ];
+    BoxShadow(
+      color: const Color(0xFF006C49).withValues(alpha: 0.20),
+      blurRadius: 24,
+      offset: const Offset(0, 8),
+    ),
+  ];
 
   static ThemeData get lightTheme {
     final colorScheme = ColorScheme(
