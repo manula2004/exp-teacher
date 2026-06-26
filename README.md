@@ -1,6 +1,6 @@
 # Teacher Class Overview
 
-A production-quality Flutter application designed for teachers to view and manage their class schedules and student performance.
+A Flutter application designed for teachers to view and manage their class schedules and student performance.
 
 ## 🚀 Setup Instructions
 
